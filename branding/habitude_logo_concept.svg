@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <clipPath id="iconMask">
+      <rect x="0" y="0" width="400" height="400" rx="80" ry="80" />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="400" rx="80" ry="80" fill="#191C1B" />
+
+  <g clip-path="url(#iconMask)">
+    <!-- Ground shadow -->
+    <ellipse cx="215" cy="358" rx="190" ry="20" fill="#000000" opacity="0.3" />
+
+    <!-- Boulder -->
+    <path d="M150,358 C110,240 170,110 300,90 C400,75 430,240 415,358 Z" fill="#6D4C41" />
+    <!-- Boulder highlight -->
+    <path d="M210,155 C235,125 280,117 312,137 C290,133 250,140 225,170 Z" fill="#8D6E63" opacity="0.6" />
+
+    <!-- Stick figure (Sisyphus, leaning back at ease, facing the viewer) -->
+    <g fill="none" stroke="#8BD5C9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Legs, loosely out front -->
+      <line x1="185" y1="290" x2="105" y2="355" />
+      <line x1="180" y1="290" x2="150" y2="360" />
+      <!-- Feet -->
+      <line x1="85" y1="355" x2="125" y2="355" />
+      <line x1="130" y1="360" x2="170" y2="360" />
+
+      <!-- Torso, leaning back into the boulder -->
+      <line x1="185" y1="150" x2="185" y2="290" />
+
+      <!-- Arms, raised with hands tucked behind the head -->
+      <path d="M165,155 L130,95 L175,85" />
+      <path d="M205,155 L240,95 L195,85" />
+    </g>
+
+    <!-- Head, facing the viewer -->
+    <circle cx="185" cy="110" r="30" fill="#8BD5C9" />
+
+    <!-- Relaxed smile -->
+    <path d="M176,128 Q185,136 194,128" stroke="#191C1B" stroke-width="4" stroke-linecap="round" fill="none" />
+
+    <!-- Sunglasses, facing forward -->
+    <g>
+      <rect x="163" y="104" width="22" height="15" rx="6" fill="#0D0D0D" />
+      <rect x="193" y="104" width="22" height="15" rx="6" fill="#0D0D0D" />
+      <line x1="185" y1="111" x2="193" y2="111" stroke="#0D0D0D" stroke-width="4" stroke-linecap="round" />
+      <line x1="168" y1="109" x2="176" y2="109" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+      <line x1="198" y1="109" x2="206" y2="109" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+    </g>
+  </g>
+</svg>

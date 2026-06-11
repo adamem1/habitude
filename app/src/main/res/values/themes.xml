@@ -1,0 +1,10 @@
+<resources>
+    <!-- Base application theme. Dark-only: the app does not support a light theme. -->
+    <style name="Theme.Habituator" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

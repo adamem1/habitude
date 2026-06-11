@@ -1,0 +1,37 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local configuration (SDK path etc.) - machine-specific, never commit
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Kotlin compiler cache
+.kotlin/
+
+# Native build
+.cxx/
+.externalNativeBuild/
+
+# Logs and crash reports
+*.log
+*.hprof
+
+# Signing keys - never commit these
+*.jks
+*.keystore
+keystore.properties
+
+# Build outputs
+*.apk
+*.aab
+
+# OS files
+.DS_Store
+
+# Claude Code local state
+.claude/

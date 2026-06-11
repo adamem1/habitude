@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+
+    <!-- Ground shadow -->
+    <path
+        android:fillColor="#000000"
+        android:fillAlpha="0.3"
+        android:pathData="M25,358 a190,20 0 1,0 380,0 a190,20 0 1,0 -380,0 Z" />
+
+    <!-- Boulder -->
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M150,358 C110,240 170,110 300,90 C400,75 430,240 415,358 Z" />
+
+    <!-- Boulder highlight -->
+    <path
+        android:fillColor="#8D6E63"
+        android:fillAlpha="0.6"
+        android:pathData="M210,155 C235,125 280,117 312,137 C290,133 250,140 225,170 Z" />
+
+    <!-- Stick figure: legs, feet, torso, arms behind head -->
+    <path
+        android:strokeColor="#8BD5C9"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M185,290 L105,355 M180,290 L150,360 M85,355 L125,355 M130,360 L170,360 M185,150 L185,290 M165,155 L130,95 L175,85 M205,155 L240,95 L195,85" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#8BD5C9"
+        android:pathData="M155,110 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0 Z" />
+
+    <!-- Relaxed smile -->
+    <path
+        android:strokeColor="#191C1B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M176,128 Q185,136 194,128" />
+
+    <!-- Sunglasses -->
+    <path
+        android:fillColor="#0D0D0D"
+        android:pathData="M163,104 L185,104 L185,119 L163,119 Z M193,104 L215,104 L215,119 L193,119 Z" />
+    <path
+        android:strokeColor="#0D0D0D"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M185,111 L193,111" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeAlpha="0.6"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M168,109 L176,109 M198,109 L206,109" />
+
+</vector>
