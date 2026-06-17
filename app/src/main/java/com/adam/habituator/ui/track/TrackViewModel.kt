@@ -109,6 +109,7 @@ class TrackViewModel(
             .firstOrNull { cwi -> cwi.items.any { it.item.id == habitItemId } }
         val itemState = categoryWithItems?.items?.firstOrNull { it.item.id == habitItemId }
 
+        notificationChannelManager.cancelItemNotification(habitItemId)
         viewModelScope.launch { logRepository.logSession(habitItemId, quantity) }
 
         if (categoryWithItems == null || itemState == null) return null

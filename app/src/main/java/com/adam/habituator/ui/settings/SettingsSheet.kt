@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -29,6 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.adam.habituator.data.ReminderFrequency
 import com.adam.habituator.ui.rememberAppContainer
 import java.time.LocalDate
 
@@ -39,6 +41,7 @@ fun SettingsSheet(onDismiss: () -> Unit) {
     val container = rememberAppContainer()
     val viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.factory(container))
     val remindersEnabled by viewModel.remindersEnabled.collectAsStateWithLifecycle()
+    val reminderFrequency by viewModel.reminderFrequency.collectAsStateWithLifecycle()
     val backupStatus by viewModel.backupStatus.collectAsStateWithLifecycle()
 
     var showRestoreConfirm by remember { mutableStateOf(false) }
@@ -79,6 +82,31 @@ fun SettingsSheet(onDismiss: () -> Unit) {
                     )
                 }
                 Switch(checked = remindersEnabled, onCheckedChange = viewModel::setRemindersEnabled)
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text("Reminder frequency", style = MaterialTheme.typography.bodyLarge)
+            Text(
+                "Daily: one nudge per day for your top priority habit. Weekly: each habit reminded at most once per week.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                OutlinedButton(
+                    onClick = { viewModel.setReminderFrequency(ReminderFrequency.DAILY) },
+                    modifier = Modifier.weight(1f),
+                    border = if (reminderFrequency == ReminderFrequency.DAILY)
+                        BorderStroke(2.dp, MaterialTheme.colorScheme.primary) else null,
+                ) { Text("Daily") }
+                Spacer(modifier = Modifier.width(8.dp))
+                OutlinedButton(
+                    onClick = { viewModel.setReminderFrequency(ReminderFrequency.WEEKLY) },
+                    modifier = Modifier.weight(1f),
+                    border = if (reminderFrequency == ReminderFrequency.WEEKLY)
+                        BorderStroke(2.dp, MaterialTheme.colorScheme.primary) else null,
+                ) { Text("Weekly") }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
