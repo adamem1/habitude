@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.adam.habituator.data.AppContainer
+import com.adam.habituator.data.ReminderFrequency
 import com.adam.habituator.data.UserPreferencesRepository
 import com.adam.habituator.data.repository.BackupRepository
 import kotlinx.coroutines.Dispatchers
@@ -30,11 +31,18 @@ class SettingsViewModel(
     val remindersEnabled: StateFlow<Boolean> = userPreferencesRepository.remindersEnabled
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), true)
 
+    val reminderFrequency: StateFlow<ReminderFrequency> = userPreferencesRepository.reminderFrequency
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ReminderFrequency.DAILY)
+
     private val _backupStatus = MutableStateFlow<BackupStatus?>(null)
     val backupStatus: StateFlow<BackupStatus?> = _backupStatus.asStateFlow()
 
     fun setRemindersEnabled(enabled: Boolean) {
         viewModelScope.launch { userPreferencesRepository.setRemindersEnabled(enabled) }
+    }
+
+    fun setReminderFrequency(frequency: ReminderFrequency) {
+        viewModelScope.launch { userPreferencesRepository.setReminderFrequency(frequency) }
     }
 
     fun exportBackup(context: Context, uri: Uri) {
